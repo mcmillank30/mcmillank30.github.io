@@ -23,10 +23,31 @@
  */
 function range(start, end) {
     // YOUR CODE GOES BELOW HERE //
+    // create empty array
+    var array = [];
     
+    // use if statement to determin which value is greater
+    if( start < end){ 
+        
+    // use for loop to print from start to end
+            for(var i = start; i<= end; i++){
+     // push each value to array 
+                array.push(i);
+            }
+    }else if(start > end){
+    // use for loop to print from start to end     
+            for(var i = start; i>= end; i--){
+    // push each value to array 
+                array.push(i);        
+                
+            }
+            
+    }   
     
+  
+ // return array
     
-    
+return array    
     // YOUR CODE GOES ABOVE HERE //
 }
 

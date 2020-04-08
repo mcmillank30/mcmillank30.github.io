@@ -37,80 +37,60 @@
 
 // YOUR CODE GOES BELOW HERE //
 function makeContact(id, nameFirst, nameLast) {
-//Inputs: id, nameFirst, nameLast
-//Outputs: returns a contact object
-//I want to create an object name "contact", 
-//Object keys are; id, nameFirst, nameLast 
- 
-      var contactObj = {};
-//using dot notation to add each input as a key in contactObj      
-  
-  
-  
-     contactObj.id = id, contactObj.nameFirst = nameFirst, contactObj.nameLast = nameLast; 
 
-//using return statement to return contact object     
-      return contactObj;
+//return a contact object
+ var object = {id: id, nameFirst: nameFirst, nameLast: nameLast};
 
-
+return object; 
 } 
 
+
+function makeContactList() {
     /*
      * You need something here to hold contacts. See length api for a hint:
      */
-    
-// create object
-// returns Object that manages contacts
-
-  var contacts = [];
+    var contacts = [];
+   console.log(contacts, 'line 53') 
     return {
-         // we implemented the length api for you //
-         length: function() { return contacts.length;
-             
-         },
-         //using .push to move object to contacts array
-         addContact: function(object){ contacts.push(object);
-             
-         },
-         
-         findContact: function(fullName){
-// using for loop to loop through contacts array to find object with matching contact and return contact
-            for(var i = 0; i < contacts.length; i++) {
-                 if(fullName === contacts[i]["nameFirst"] + " " + contacts[i]["nameLast"]){
-                     return contacts[i]
-                 }
-             }
-         },
-// using .shift to remove contact
-         removeContact: function(object) { 
-             contacts.shift(object);
-             
-         },
-         
-         printAllContactNames: function(){
-// assigning the variable contactName the value of empty string
-             var contactName = '';
-// using for loop to iterate through contacts array
-             for(var i = 0; i < contacts.length; i++){ 
-// assigning the name variable to the value of nameFirst, space, nameLast concatnated 
-                 var name = contacts[i].nameFirst + ' ' + contacts[i].nameLast; 
-// using if statement to check i === the last index of contacts array, if so reassigning contactName the value of contactName + name. Else seperating with newline
-                 if(i === contacts.length - 1){  
-                     contactName += name;        
-                     
-                 }else{
-                     contactName += name + '\n'; 
-                 }
-                 
-            }
-// using return keyword to return contact name            
-            return contactName; 
-        }
-     };
-       
+        // we implemented the length api for you //
+        length: function() {
+            return contacts.length;
+        },
+      // create function that adds contact input to contacts array  
+        addContact: function(contact){ 
+            return contacts.push(contact);
+        },
+      // create a function that takes fullName a string
+ 
+      
+   
+        findContact: function(fullName){ 
+            
+      // returns contact obj if found in contacts array. For loop contacts array.
+                for(var i = 0; i < contacts.length; i++){
+                    
+      // if (fullName.toUpperCase() === contacts[i].firstName.toUpperCase() + ' ' + contacts[i].lastName.toUpperCase()){ return contacts[i]}                  
+                        if(fullName.toUpperCase() === contacts[i].nameFirst.toUpperCase() + ' ' + contacts[i].nameLast.toUpperCase()){
+                            
+                                return contacts[i]
+                        
+      // returns undefined if string doesn't match anything
+      // else{ return undefined}                      
+                        }else{
+                            
+                            return undefined;
+                        }
+                }
+        },
         
+       
+
+        
+    }
 
 
+    
+}
 
 
 // YOUR CODE GOES ABOVE HERE //

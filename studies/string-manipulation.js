@@ -2,7 +2,7 @@
  * STRING MANIPULATION:
  *
  * 0. In JavaScript strings can be manipulated using the concatenation operator (+), 
- * or veriou methods like: .toUpperCase(), .concat(), .slice()
+ * or verious methods like: .toUpperCase(), .concat(), .slice()
  */
 
 // 1. With operators //
@@ -17,7 +17,7 @@ console.log(string);    // prints "I love JavaScript!"
 
 
 // 2. With string methods //
-// Manipulating strings with sting methods
+// Manipulating strings with string methods
 var anotherString = 'Good';
 
 console.log(anotherString.concat('Afternoon!'));   // combines strings => prints 'Good Afternoon!''
