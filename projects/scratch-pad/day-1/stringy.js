@@ -14,7 +14,7 @@
  */
 function length(string) {
     // YOUR CODE BELOW HERE //
-//using .length to return sting length    
+//using .length to return string length    
 return string.length
 
     // YOUR CODE ABOVE HERE //
@@ -113,17 +113,16 @@ function beginsWith(string, char) {
  */
 function endsWith(string, char) {
     // YOUR CODE BELOW HERE //
- // Create variable lastChar to hold the value of the last index of string. Then create if/else statement with an
- //argument that sets both lastChar and char to uppercase then compare if the if the values are equal to one another.
- //It return true if equal, and returns false if not equal.
 
+// Create variable lastChar to hold the value of the last index of string
 var lastChar = string[string.length-1];
- 
+// Then create if/else statement with an argument that sets both lastChar and char to uppercase then compare if the if the values are equal to one another. 
  if(lastChar.toUpperCase() == char.toUpperCase()) {
-     
+  //return true if equal   
      return true;
  }else{
-     
+ 
+//returns false if not equal.    
      return false;
  }
 
@@ -177,18 +176,16 @@ return (args.join(""));
 function longest(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
 
-/* Create variable strOneLength to store the value of the length of stringOne. Create variable strTwoLength to store the value of the length of stringTwo. 
-   Then used if/else statement compare
-   the values of strOneLength and strTwoLength and return stringTwo if strTwoLength is the greater value, else return stringOne.
-*/
+// Create variable strOneLength to store the value of the length of stringOne.
 var strOneLength = stringOne.length;
+//Create variable strTwoLength to store the value of the length of stringTwo.
 var strTwoLength = stringTwo.length;
-
+// Used if/else statement compare the values of strOneLength and strTwoLength and return stringTwo 
 if(strOneLength < strTwoLength) {
-    
+//if strTwoLength  greater value return    
     return stringTwo;
 }else{
-    
+// else return stringOne    
     return stringOne;
 }
 
@@ -204,18 +201,19 @@ if(strOneLength < strTwoLength) {
  */
 function sortAscending(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
-/*Used if statement to compare the values of stringOne and stringTwo and return -1 if stringOne was greater(Higher in alphabetical order),
-else if return 1 if the if stringOne is lower(lower in alphabetical order), else return 0 which will happen if stringOne and stringTwo values are equal
-*/
+
+
+
+//Used if statement to compare the values of stringOne and stringTwo and return -1 if stringOne was greater
 if(stringOne > stringTwo){
     
     return -1;
-    
+//else if return 1 if the if stringOne is lower    
 }else if(stringOne < stringTwo){
     
     return 1; 
 }else{
-    
+//else return 0 which will happen if stringOne and stringTwo values are equal    
     return 0;
 }
 
@@ -234,18 +232,19 @@ if(stringOne > stringTwo){
 function sortDescending(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
 
-/*Used if statement to compare the values of stringOne and stringTwo and return -1 if stringOne less than(lower in alphabetical order),
-else if return 1 if the stringOne is greater(Higher in alphabetical order), else return 0 which will happen if stringOne and stringTwo values are equal
-*/
+
+
+
+//Used if statement to compare the values of stringOne and stringTwo and return -1 if stringOne less than
 if(stringOne < stringTwo){
     
     return -1;
-    
+//else if return 1 if the stringOne is greater    
 }else if(stringOne > stringTwo){
     
     return 1; 
 }else{
-    
+//else return 0 which will happen if stringOne and stringTwo values are equal    
     return 0;
 }
 

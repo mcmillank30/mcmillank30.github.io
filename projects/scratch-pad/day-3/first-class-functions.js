@@ -14,9 +14,8 @@
 function createGreaterThanFilter(base) {
     // YOUR CODE BELOW HERE //
  //returning testValueIsGreBase function with value parameter.
-    // it has a return statement that compares value to base. If value is greater the comparison evaluates to true and returns true, if not evaluates to false and returns false.
    return function testIfValueIsGreBase (value) {
-      
+  // it has a return statement that compares value to base. If value is greater the comparison evaluates to true and returns true, if not evaluates to false and returns false.     
        return value > base;
        
    };
@@ -35,9 +34,8 @@ function createGreaterThanFilter(base) {
 function createLessThanFilter(base) {
     // YOUR CODE BELOW HERE //
  //returning testValueLessBase function with value parameter.
-    // it has a return statement that compares value to base. If value is less the comparison evaluates to true and returns true, if not evaluates to false and returns false.
     return function testValueLessBase(value){
-        
+//return statement compares value to base. If value is less the comparison evaluates to true and returns true, if not evaluates to false and returns false.        
         return value< base;
         
     };    
@@ -55,12 +53,9 @@ function createLessThanFilter(base) {
 function createStartsWithFilter(startsWith) {
     // YOUR CODE BELOW HERE //
  //returning testStringStarts function with string parameter.
-    // it has a return statement that takes the first character of a given string and capitalizes using the .toUpperCase method
-    // and also capitalize the given startsWith character and does a strick equality comparision. 
-    // If the character are equal, the function returns true, otherwise returns false. 
-
     return function testStringStarts(string){
-        
+ // it has a return statement that takes the first character of a given string and capitalizes using the .toUpperCase method and also capitalize the given startsWith character and does a strick equality comparision. 
+ //If the character are equal, the function returns true, otherwise returns false. 
         return string[0].toUpperCase() === startsWith.toUpperCase();
         
     };   
@@ -77,13 +72,11 @@ function createStartsWithFilter(startsWith) {
  */
 function createEndsWithFilter(endsWith) {
     // YOUR CODE BELOW HERE //
-   //returning testStringEnds function with string parameter.
-    // it has a return statement that takes the last character of a given string and capitalizes using the .toUpperCase method
-    // and also capitalize the given endsWith character and does a strick equality comparision. 
-    // If the character are equal, the function returns true, otherwise returns false. 
-
+ //returning testStringEnds function with string parameter.
     return function testStringEnds(string){
-        
+ //return statement takes the last character of a given string and capitalizes using the .toUpperCase method
+ // and also capitalize the given endsWith character and does a strick equality comparision. 
+ // If the character are equal, the function returns true, otherwise returns false. 
       return string[string.length-1].toUpperCase() === endsWith.toUpperCase();  
         
     };
@@ -104,17 +97,16 @@ function createEndsWithFilter(endsWith) {
 function modifyStrings(strings, modify) {
     // YOUR CODE BELOW HERE //
   // Create an array myArray
-    // Using a For Loop to interate through the given array of stings.
-    // the strings get passed throught the modify function include in the code block of the For Loop, and pushed to myArray using the .push method.
-    // Then returning myArray, which includes the modified strings.
-    console.log(strings, "line 90");
 const myArray=[];
+    // Using a For Loop to interate through the given array of stings.
+   
 for (let i = 0; i < strings.length; i++){
-    
+
+ // the strings get passed throught the modify function include in the code block of the For Loop, and pushed to myArray using the .push method.
       myArray.push(modify(strings[i]));
       
 }
-   
+ // Then returning myArray, which includes the modified strings.   
     return myArray;   
     
     
@@ -133,27 +125,19 @@ for (let i = 0; i < strings.length; i++){
  */
 function allStringsPass(strings, test) {
     // YOUR CODE BELOW HERE //
- // Create an array myArray
     // Using a For Loop to interate through the given array of stings.
-    // the strings get passed throught the test function include in the code block of the For Loop, and are assigned to the variable outcome
-    // Then strickly comparing the value of outcome variable to false. If any string value failed the test, 
-    // the condition evaluates to false and false will return out of the function; if not we exit out of If Statement and return true.
-  
       for(var i = 0; i < strings.length; i++){
-            
+   // the strings get passed throught the test function include in the code block of the For Loop, and are assigned to the variable outcome
             var outcome = (test(strings[i]));
             
-            
+  // Then strickly comparing the value of outcome variable to false. If any string value failed the test,           
             if(outcome === false){
-          
+  // the condition evaluates to false and false will return out of the function; if not we exit out of If Statement and return true.
                     return false;
          
             }
      
       }
-    
-   
-    
      return true;    
     
     

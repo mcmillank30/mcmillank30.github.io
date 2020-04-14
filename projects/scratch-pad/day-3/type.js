@@ -14,9 +14,7 @@
  */
 function isArray(value) {
     // YOUR CODE BELOW HERE //
-  /* Using the isArray method to determine if the value being passed in to the function is an Array or not. 
-    The isArray method takes in the input value and resolve to true if the input is an array, and resolves
-    to false if the input is not an array. Using the return keyword to return the true or false value out of the isArray function */
+  // Using the isArray method to determine if the value being passed in to the function is an Array or not. 
   return  Array.isArray(value);
     
 
@@ -34,17 +32,15 @@ function isArray(value) {
  */
 function isObject(value) {
     // YOUR CODE BELOW HERE //
- /* Using If/Else statememnt with an if condition that uses typeof operator to test if value being passed in to the isObject function is strictly equal to an object,
-    and is not null,
-    and is not an array(using the is.Array method which evaluates to true if value is an array), 
-    and value is not a date(using the instanceof operate which evaluates to true if value is a date).
-   If the If condition evaluates to true the if statement will return true in the first code block. Else the if statement will return false */
+
    
+   //Using If/Else statememnt with an if condition that uses typeof operator to test if value being passed in to the isObject function is strictly equal to an object, 
+   //and is not null,and is not an array  and value is not a date
     if(typeof value === "object" && value != null && Array.isArray(value) != true && value instanceof Date != true){
-        
+   //If the If condition evaluates to true return true    
         return true;
     }else{
-        
+     // Else return false     
         return false;
     }
        
@@ -62,15 +58,13 @@ function isObject(value) {
  */
 function isCollection(value) {
     // YOUR CODE BELOW HERE //
- /* Using If/Else statememnt with an if condition that uses typeof operator to test if value being passed in to the isCollection function is strictly equal to an object,
-    and is not null, and value is not a date(using the instanceof operate which evaluates to true if value is a date).
-   If the If condition evaluates to true the if statement will return true in the first code block. Else the if statement will return false */
-   
+
+ //Using If/Else statememnt with an if condition that uses typeof operator to test if value being passed in to the isCollection function is strictly equal to an object, and is not null, and value is not a date  
     if(typeof value === "object" && value != null && value instanceof Date != true){
-        
+ //If the If condition evaluates to true the if statement will return true       
         return true;
     }else{
-        
+//Else the if statement will return false    
         return false;
     }
     
@@ -102,30 +96,26 @@ function isCollection(value) {
  */ 
 function typeOf(value) {
     // YOUR CODE BELOW HERE //
-   /* Using If/Else-if/Else statememnt with an if condition that uses the typeof operator to test if value being passed into the typeof function is strictly equal to an object,
-    and is not null, and is not an array, and value is not a date.
-   If the If condition evaluates to true the if statement will return the "object" in the first code block. If not, the following Else-if statement is evaluate, comparing is 
-   if isArray evaluates to true and returns "array" if true. Else if we use instanceof method to check if value is a date, and returns "date" if so. Else if, evaluate if value
-   has the value of null and if so returns "null". Else we return typeof value*/
-      
+//Using If/Else-if/Else statememnt with an if condition that uses the typeof operator to test if value being passed into the typeof function is strictly equal to an object, and is not null, and is not an array, and value is not a date.      
       if(typeof value === "object" && value != null && Array.isArray(value) != true && value instanceof Date != true){
-        
+// If the If condition evaluates to true  return the "object"        
         return "object";
     
-          
+//If not comparing if isArray evaluates to true and returns "array" if true          
       }else if(Array.isArray(value) == true){
           
            return "array";
       
-          
+//Else if we use instanceof method to check if value is a date, and returns "date" if so          
       }else if(value instanceof Date == true){
           
           return "date";
-          
+ //Else if, evaluate if value has the value of null and if so returns "null"
+ 
       }else if(value == null){  
           
           return "null";
-          
+//Else we return typeof value          
       }else{
           
           return typeof value;

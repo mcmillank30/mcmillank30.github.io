@@ -83,7 +83,38 @@ function makeContactList() {
                 }
         },
         
-       
+        removeContact: function(contact){
+            
+      // For loop contacts array.
+                for(var i = 0; i < contacts.length; i++){
+      // if input contact is === object in array              
+                    if(contact === contacts[i]){
+      // returning contacts with input contact removed                  
+                       return  contacts.splice(i, 1)
+                    }
+                }
+            
+        },
+        
+        printAllContactNames: function(){
+        var contactName = ''
+      // For loop contacts array.
+                for(var i = 0; i < contacts.length; i++){
+       // assigning first name space last name to name variable            
+                    var name = contacts[i].nameFirst + ' ' + contacts[i].nameLast;
+       // using if statement to check if i is the last index in array            
+                        if(i === contacts.length -1){
+       // if last index of contacts array, assigning name to contactName                      
+                            contactName += name
+                        
+                         }else{
+        //otherwise assign name + new line to contactName                     
+                            contactName += name + '\n' 
+                         }
+                } 
+        //return contactName            
+           return contactName 
+        }
 
         
     }

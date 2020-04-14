@@ -14,7 +14,7 @@ function printArrayValues(array) {
   // YOUR CODE BELOW HERE //
 //create a for loop
 for(var i = 0; i < array.length; i++){
-  
+ //logging array i 
   console.log(array[i]);
 }
   
@@ -31,7 +31,7 @@ function printArrayValuesInReverse(array) {
   // YOUR CODE BELOW HERE //
   // create a for loop
   for(var i = array.length - 1; i >= 0; i--){
-  
+  //logging array i  
   console.log(array[i]);
 }
   
@@ -46,7 +46,6 @@ function printArrayValuesInReverse(array) {
 function getObjectKeys(object) {
   // YOUR CODE BELOW HERE //
   //use Object.keys() to return array of object keys
-  
   return Object.keys(object);
   
   
@@ -62,7 +61,7 @@ function printObjectKeys(object) {
   // YOUR CODE BELOW HERE //
  // use for in loop to loop and console.log(key) 
  for(var key in object){
-   
+  //logging keys  
    console.log(key);
    
  } 
@@ -99,7 +98,7 @@ function printObjectValues(object) {
   
   // use for in loop to loop and console.log(object[key]) 
  for(var key in object){
-   
+   //logging values 
    console.log(object[key]);
    
  } 
@@ -116,7 +115,6 @@ function getObjectLength(object) {
   // YOUR CODE BELOW HERE //
   
    //use Object.keys() to return array of object keys, .length
-   
   return Object.keys(object).length;
   
   
@@ -144,7 +142,7 @@ var revArr = arr.reverse()
 
 // looping array and printing each value    
       for(var i = 0; i < revArr.length; i++){
-          
+        //logging revArr[i]   
             console.log(revArr[i]);
  
       }
