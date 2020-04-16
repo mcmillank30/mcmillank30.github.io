@@ -7,26 +7,29 @@
 function range(start, end, increment) {
 //create empty array
 var numbers = [];
-
+// if start === end, then return numbers
   if(start === end){
     
       return numbers
-  
+ //otherwise if increment > 0 
   }else if(increment > 0){
-    
+ // using for loop to count from start to end, pushing i to numbers array   
          for(var i = start; i <= end; i = i + increment){
       
                 numbers.push(i)
       
           }
+  // increment < 0 ,       
   }else if (increment < 0){
-    
+ //using for loop count from start to end, pushing j to numbers array   
           for( var j = start; j >= end; i = i + increment){
             
                 numbers.push(j)
             
           }
+          
   }else if (increment === undefined){
+    
     for(var k = start; k <= end; k++){
 
             numbers.push(k)
@@ -44,6 +47,8 @@ return numbers
 ////////////////////////////////////////////////////////////////////////////////
 
 function sum() {
+
+
 
 }
 
