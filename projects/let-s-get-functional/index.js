@@ -215,37 +215,51 @@ var friendsCount = function(array, name){
 
 
 var topThreeTags = function(array){
- 
+// creating empty array 
  var arr = []
+ // looping with each
+ _.each(array ,function(element, index, collection){
  
- _.forEach(array ,function(element, index, array){
-  
-  _.forEach(element.tags, function(tag, index, collection){
-   
+ //looping with each 
+  _.each(element.tags, function(tag, index, collection){
+ // push tag to array  
    arr.push(tag)
    
   })
  })
- 
+// assigning the value of reduce function to variable 
   var newObj = _.reduce(arr, function(obj, tags){
-     
+ // if obj[tags] resolves to true,  obj[tags] += 1; and return obj
      if(obj[tags]){
       
       obj[tags] += 1;
       
       return obj
+//otherwise  obj[tags] = 1, and return obj   
      }else{
       obj[tags] = 1
-      return obj
-     }
-    }, {})
     
+      return obj
+   
+     }
+     
+    }, {})
+// created empty array    
 var sortArr = [];
-
+// looping object
 for (var key in newObj){
- 
+// pushing {tag: key, occured: newObj[key]} to array
      sortArr.push({tag: key, occured: newObj[key]})
 }
+//using .sort and returning b.occured - a.occured
+sortArr.sort(function (a,b){
+    
+    
+    return b.occured - a.occured
+    
+})
+//returning [sortArr[0].tag, sortArr[1].tag, sortArr[2].tag]
+return [sortArr[0].tag, sortArr[1].tag, sortArr[2].tag]
  
 };
 
@@ -256,12 +270,28 @@ for (var key in newObj){
 
 
 var genderCount = function(array){
-    
-    _.reduce(array, function(){
+//assigning value of reduce to variable    
+ var gender =   _.reduce(array, function(number, person){
+//if person.gender === 'male', number.male = (number.male || 0) + 1       
+        if(person.gender === 'male'){
+            
+            number.male = (number.male || 0) + 1
+//otherwise if person.gender === 'female',  number.female = (number.female || 0) + 1      
+        }else if (person.gender === 'female'){
+            
+            number.female = (number.female || 0) + 1
+//otherwise person.gender === 'non-binary', number['non-binary'] = (number.nonbinary || 0) + 1        
+        }else if (person.gender === 'non-binary'){
+            
+            number['non-binary'] = (number.nonbinary || 0) + 1
+            
+        }
+//returning number        
+ return number       
         
-        
-    })
-    
+    }, {})
+// return gender    
+ return gender 
     
 };
 
