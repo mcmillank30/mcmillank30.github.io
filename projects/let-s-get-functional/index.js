@@ -31,7 +31,10 @@ let arrOfMales = _.filter(array, function(customerObj){
 return  arrOfMales.length
 };
 
-var femaleCount = function(){
+
+
+
+var femaleCount = function(array){
 //need one return statement for each function scope    
 return _.reduce(array, function(sum, customerObj){
           //check if customer obj is a female increment sum by 1
@@ -46,21 +49,221 @@ return _.reduce(array, function(sum, customerObj){
 
 
 
-var oldestCustomer;
 
-var youngestCustomer;
+//Redo with HOF
+//i: array
+//o: string
+var oldestCustomer = function(array){
+//created oldest age seed variable assigned to 0
+var oldestAge = 0;
+//create variable to assign oldest person name
+var oldestAgeName;
+// looping array with for loop  
+  for(var i = 0; i < array.length; i++){
+// if array[i].age > oldestAge, assign new oldest age, and assigning name 
+      if(array[i].age > oldestAge){
+       
+       oldestAge = array[i].age
+       
+       oldestAgeName = array[i].name
+      }
+      
+  }
+  //returning oldest persons name
+ return oldestAgeName
+};
 
-var averageBalance;
 
-var firstLetterCount;
 
-var friendFirstLetterCount;
 
-var friendsCount;
+var youngestCustomer = function(array){
+// create variable  
+var youngestAge = Infinity 
+//create variable for name
+var youngestName;
+// using for loop to loop array
+ for(var i = 0; i < array.length; i++){
+// if array[i].age < youngestAge,  youngestAge = array[i].age and youngestName = array[i].name
+     if( array[i].age < youngestAge){
+      
+      youngestAge = array[i].age
+      youngestName = array[i].name
+     
+     }
 
-var topThreeTags;
+ }
 
-var genderCount;
+ // returning youngest name 
+ return youngestName
+};
+
+//i:array
+//o:number
+
+
+var averageBalance = function(array){
+// created a variable for empty array an seed 0
+var arrOfNumStr = []
+var sum = 0  
+// looping using for loop  
+  for(var i = 0; i < array.length; i++){
+// pushing balances to empty array   
+   arrOfNumStr.push(array[i].balance)
+  }
+ 
+ 
+ //looping array of string nums 
+  for(var i = 0; i < arrOfNumStr.length; i++){
+      // removing $ and assigning to variable  
+        var no$ = arrOfNumStr[i].slice(1)
+        // spliting strting to array
+        var noCom = no$.split(',')
+        // rejoining string
+        var numStr = noCom.join('')  
+        //converting sting to a number
+        var num = Number(numStr)
+        //assigning the value of num to sum
+        sum += num
+  }
+ // dividing sum by num of objects to get avg
+var avgBal = sum / array.length
+// returning avg bal
+return avgBal
+};
+
+
+
+
+var firstLetterCount = function(array, letter){
+// created empty array
+var arr = [];
+// looping array
+for(var i = 0; i < array.length; i++){
+    // if array[i].name.toUpperCase().startsWith(letter.toUpperCase())
+        if(array[i].name.toUpperCase().startsWith(letter.toUpperCase())){
+ // push name to array         
+            arr.push(array[i].name);
+        }
+} 
+ // returning array length   
+return arr.length;   
+};
+
+
+
+
+
+var friendFirstLetterCount = function(array, customer, letter){
+
+var arrObj;  
+var nameStartsL = [];
+//looping array
+    for(var i = 0; i < array.length; i++){
+ //if array[i].name.toUpperCase() === customer.toUpperCase() 
+           if (array[i].name.toUpperCase() === customer.toUpperCase()){
+//if array[i].friends !== undefined)
+                  if(array[i].friends !== undefined){ 
+//assigning the value of array[i].friends to variable      
+                        arrObj = array[i].friends;
+                  }
+           }  
+    } 
+//looping array   
+     for(var j = 0; j <arrObj.length; j++){;
+//if arrObj[j].name.toUpperCase().startsWith(letter.toUpperCase()) 
+           if(arrObj[j].name.toUpperCase().startsWith(letter.toUpperCase())){
+   // pushing arrObj[j].name          
+                  nameStartsL.push(arrObj[j].name);
+           }
+     } 
+// returning array length       
+return nameStartsL.length;   
+
+};
+
+
+
+
+
+
+var friendsCount = function(array, name){
+//create empty array 
+ var arrFriendNames = []
+ // looping input array
+     for(var i = 0; i < array.length; i++){
+// assiging friendsArr = array[i].friends      
+           var friendsArr = array[i].friends
+// looping friendsArr           
+              for(var j = 0; j < friendsArr.length; j++){
+               
+                     // if friendsArr[j].name === name, pushing name to empty array  
+                       if(friendsArr[j].name === name){
+                       
+                       arrFriendNames.push(array[i].name)
+                       
+                       }
+              }
+           
+     }
+     // returning empty array
+ return arrFriendNames
+};
+
+
+
+
+
+
+var topThreeTags = function(array){
+ 
+ var arr = []
+ 
+ _.forEach(array ,function(element, index, array){
+  
+  _.forEach(element.tags, function(tag, index, collection){
+   
+   arr.push(tag)
+   
+  })
+ })
+ 
+  var newObj = _.reduce(arr, function(obj, tags){
+     
+     if(obj[tags]){
+      
+      obj[tags] += 1;
+      
+      return obj
+     }else{
+      obj[tags] = 1
+      return obj
+     }
+    }, {})
+    
+var sortArr = [];
+
+for (var key in newObj){
+ 
+     sortArr.push({tag: key, occured: newObj[key]})
+}
+ 
+};
+
+
+
+//i: array
+//o: object
+
+
+var genderCount = function(array){
+    
+    _.reduce(array, function(){
+        
+        
+    })
+    
+    
+};
 
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////

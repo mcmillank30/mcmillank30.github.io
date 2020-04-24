@@ -1,35 +1,60 @@
 /*
  * STRING MANIPULATION:
  *
- * 0. In JavaScript strings can be manipulated using the concatenation operator (+), 
- * or verious methods like: .toUpperCase(), .concat(), .slice()
+ * 0.String Manipulation is the way in which we can alter string values in JavaScript, using operators or various string methods
+ * for example: concat, toUppercase, toLowerCase, slice, split, charAt.
  */
 
+
+
+
 // 1. With operators //
-// Manipulating a string with the concat operator.
 
-console.log('I am ' + 'a ' + 'string!');  // combines each string including spaces  prints  ' I am a String'
+// The concat operator can be used in order to combine string value to create a new value.
 
-// Manipulating a string with the += operator.
-var string = "I love";
-string += " JavaScript!";
-console.log(string);    // prints "I love JavaScript!"
+
+var oldVal = 'Happy'
+
+var anotherOldVal = ' Day!'
+
+var newVal = oldVal + anotherOldVal                     //Using the concat operator to combine string values of oldVal and anotherOldVal
+
+console.log(newVal)                                     // "Happy Day!" will print to console
+
+
 
 
 // 2. With string methods //
-// Manipulating strings with string methods
-var anotherString = 'Good';
 
-console.log(anotherString.concat('Afternoon!'));   // combines strings => prints 'Good Afternoon!''
+// String values can be altered using various string methods in JavaScript
 
-console.log(anotherString.toUpperCase());        //capitalizes string => prints 'GOOD'
+var songString = "oh happy day"
 
-console.log(anotherString.slice(1,2));           //slices off before first index and at second  => prints o
+var capSongString = songString.toLocaleUpperCase()      //capitalizing string value and assigning it to new variable
 
-console.log(anotherString.split());              //splits the string in to array => prints ['G', 'o', 'o', 'd' ]
+console.log(capSongString)                              //prints "OH HAPPY DAY"
 
-console.log(anotherString.toLowerCase());        //lowercases string => prints 'good'
 
-console.log(anotherString.replace('G','H'))      //replaces the first value with the second.  prints "Hood"
 
-console.log(anotherString.charAt(0))             //returns the charactor at specified location => prints g
+var backToOldString = capSongString.toLocaleLowerCase() // lowcasing string value and assigning it to new variable
+
+console.log(backToOldString)                            //prints "oh happy day"
+
+
+
+var songArray = songString.split(' ')                   //spliting songString in to an array and saving value to new variable
+
+console.log(songArray)                                  //logs ['oh', 'happy', 'day'] to console
+
+
+
+var noOh = songString.slice(3)                          //slicing off the first 3 characters of the string and saving to new variable
+
+console.log(noOh)                                       //longs 'happy day' to console
+
+
+
+
+var firstChar = noOh.charAt(0)                          //saving the first charactor of string to new variable
+
+console.og(firstChar)                                   //prints 'h' to console
