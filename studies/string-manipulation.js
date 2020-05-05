@@ -11,6 +11,8 @@
 // 1. With operators //
 
 // The concat operator can be used in order to combine string value to create a new value.
+// The concat/assignment operator can be used to combine string values while reassigning the existing variable the new string value. 
+
 
 
 var oldVal = 'Happy'
@@ -20,6 +22,13 @@ var anotherOldVal = ' Day!'
 var newVal = oldVal + anotherOldVal                     //Using the concat operator to combine string values of oldVal and anotherOldVal
 
 console.log(newVal)                                     // "Happy Day!" will print to console
+
+
+var reAssignMe = 'New '
+
+reAssignMe += 'Value'                                   // concating and reassigning string value 
+
+console.log(reAssignMe)                                 // prints string 'New Value' to console
 
 
 
@@ -58,3 +67,9 @@ console.log(noOh)                                       //longs 'happy day' to c
 var firstChar = noOh.charAt(0)                          //saving the first charactor of string to new variable
 
 console.og(firstChar)                                   //prints 'h' to console
+
+
+
+var extraSpaces = '  trim me  '
+
+console.log(extraSpaces.trim())                         //using trim method to remove extra spaces on ends of string

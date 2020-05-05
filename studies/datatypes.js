@@ -13,19 +13,25 @@
 
 
 // 1. Number //
-// Numbers are numberical data in JavaScript. 
+// Numbers are numberical data in JavaScript, which include whole numbers, negative numbers, and decimals 
 // Numbers values can be opertated on using Arthmatic operators
 
-1                      // simple number data type
+1                          // simple number data type
 
-console.log(1 + 1)     // using plus operator to add to number to get new value. Prints 2 to console.    
+console.log(1 + 1)         // using plus operator to add to number to get new value. Prints 2 to console.    
 
+console.log(-4 + -19)      //adding two negative numbers. Prints  -23 to console.    
+
+console.log(1.3 + 1.2)     //adding to non whole number. Prints 2.5 to console.   
 
 
 
 // 2. String //
 // Strings are character data in JavaScript.
 // Strings have a length property as well as methods that can be used in order to manipulate them.
+// A string can be created by including any character data(including empty spaces) between single/double quotation marks, or backticks.
+
+console.log('string')                                  // string created with single quotations marks, being logged to console   
 
 var stringExample = 'Im a string. Manipulate me!'      // string value being assigned to a variable
 
@@ -101,7 +107,7 @@ function exampleFunc(x){                                    // a named function 
 
 
 
-var funcExpress = function(x){                              //an anonomys function is being assigned to a variable creating a function expression
+var funcExpress = function(x){                              //an anonymous function is being assigned to a variable creating a function expression
     
     return 'Im a function expression'
 }
@@ -114,7 +120,7 @@ function doStuff(number, stuff){
     
 }
 
-doStuff(3, function(x){ return x + '' })                    //an anonomys function is being used here as a parameter for the doStuff function. Prints '3' to console
+doStuff(3, function(x){ return x + '' })                    //an anonymous function is being used here as a parameter for the doStuff function. Prints '3' to console
     
     
 

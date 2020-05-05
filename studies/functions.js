@@ -12,13 +12,15 @@
 
 // 1. The two phases to using functions: First we must ___? Next, we can execute (or two other words for executing a function?) a function by? //
 
-// When using a function, first we must call the function.
-// Next one must invoke the function by passing arguments into the function call.
+// When using a function, first the function must be declared using the keyword function, followed by the function name, and a pair of parentheses which contains any possible parameters, 
+// then a pair of curley braces enclosing the code block of the function.
+// Next we can invoke/call the function using the functions name followed by parentheses which include any possible argument
+
 
 var arg= "abc "
 var argAlso= '123'
 
-function func(arg1, arg2){
+function func(arg1, arg2){      //Declaring the function func using function keyword and setting parameters arg1, arg2    
     
     arg1 + arg2
     

@@ -24,7 +24,9 @@ followed by a set of curly braces contain the code block to be executed.
 /* 
 For in loops can be useful for iterating over objects. Creating a for-in loop begins with the "for" keyword followed by a set of paratheses 
 which include a variable declaration for key, the "in" keyword, then the name of the object(all separated by a space)
-followed by a set of curly braces contain the code block to be executed. 
+followed by a set of curly braces contain the code block to be executed.
+Within the code block each key of the object can be logged by including the key keyword inside a console log statement, 
+and each value can be logged by placing the key keyword in brackets following the object name inside a console log statement.
  */
  
  
@@ -32,17 +34,17 @@ followed by a set of curly braces contain the code block to be executed.
 // 2. Be able to loop any number of times, forward counting up to some limit, backward counting down to 0 //
 
 
-    for(var i = 0; i < 11; i ++){            //using for loop to loop from 0 to 10
+    for(var i = 0; i < 11; i ++){                          //using for loop to loop from 0 to 10
         
-        console.log(i);                      //logging each value to console.
+        console.log(i);                                    //logging each value to console.
                 
     }
 
 
 
-    for(var i = 10; i >= 0; i --){            //using for loop to loop backwards from 10 to 0
+    for(var i = 10; i >= 0; i --){                         //using for loop to loop backwards from 10 to 0
         
-        console.log(i);                       //logging each value to console.
+        console.log(i);                                    //logging each value to console.
                 
     }
 
@@ -77,6 +79,8 @@ var exampleArr = [1,2, 3, 4, 'five'];
     var exampleObj = {key1: "value1", key2: "value2", key3: 'value3'} 
  
     for(var key in exampleObj){                             //using a for in loop to interate throught exampleObj
+        
+        console.log(key)                                    //logging each key to the console
         
         console.log(exampleObj[key])                        //logging the value of each key to the console
         
